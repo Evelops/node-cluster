@@ -1,12 +1,13 @@
 FROM node:carbon
-LABEL key = "bill node cluster container"
 
-#app 폴더 만들기 - NodeJS 어플리케이션 폴더
+LABEL email="cobill6747@gmail.com"
+LABEL name="bill"
+LABEL version="1.0"
+LABEL description="Node Cluster Conatiner"
+
 RUN mkdir -p /app
 # RUN mkdir -p /app/loggers
-# 애플리 케이션 폴더 지정 
 WORKDIR /app
-
 ADD ./ /app
 
 #패키지 설치 
