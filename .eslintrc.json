@@ -1,0 +1,26 @@
+// .eslintrc.json
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "prettier/@typescript-eslint"
+    ],
+    "plugins": ["@typescript-eslint", "prettier"],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {
+        // 세미콜론 강제 
+        "semi": ["error", "always"],
+        // 들여쓰기 2칸 
+        "indent": ["error", 2],
+        // 선언되지 않은 변수에 대한 경고 
+        "no-unused-vars": "off",
+        // 사용하지 않는 매개변수에 대한 경고 비활성화
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    }
+  }
+  
