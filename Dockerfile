@@ -1,20 +1,24 @@
-FROM node:carbon
+FROM node:lts-alpine
 
 LABEL email="cobill6747@gmail.com"
 LABEL name="bill"
 LABEL version="1.0"
-LABEL description="Node Cluster Conatiner"
+LABEL description="Node Cluster Container"
 
-RUN mkdir -p /app
-# RUN mkdir -p /app/loggers
-WORKDIR /app
-ADD ./ /app
+# 애플리케이션 폴더 생성
+WORKDIR /usr/src/app
 
-#패키지 설치 
-RUN npm i --save 
+COPY package*.json ./
 
-# Product Mode로 실행 
+RUN npm install --immutable --immutable-cache --check-cache
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+
+# Product Mode로 실행
 ENV NODE_ENV=production
 
-# start server 
-CMD node nodejs_tutorial_server.js
+CMD ["npm", "start"]
+
