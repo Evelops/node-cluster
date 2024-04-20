@@ -62,7 +62,6 @@ if (cluster.isPrimary) {
       });
   });
 }
-
 if (cluster.isWorker) {
   app.get('/', (req: Request, res: Response) => {
       res.send(` Created InstanceID: [${instanceId}],  Cluster Worker ID: [${cluster.worker?.id}]`);

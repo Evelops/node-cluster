@@ -24,5 +24,4 @@ $ docker start NODE_CLUSTER_3
 $ docker start NODE_CLUSTER_4
 ```
 
-
 > MultiCore Node Cluster 
