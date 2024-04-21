@@ -15,12 +15,12 @@ if(process.env.NODE_ENV === 'development') {
     app.use(errorHandlingMiddleware);
 }
 
-
 if (cluster.isPrimary) {
     /**
       * Create Worker
       * 사용중인 서버의 CPU 코어수를 가져와 2대의 컨테이너로 분리 
       * */ 
+
     const cpuCount = os.cpus().length;
     const workerCount = Math.floor(cpuCount / 2);
 
